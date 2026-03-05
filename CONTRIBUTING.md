@@ -27,12 +27,14 @@ Tạo môi trường lần đầu:
 ```powershell
 conda env create -f .\environment.yml
 conda activate image-search
+conda run -n image-search pre-commit install   # Đảm bảo pre-commit hoạt động khi commit
 ```
 
 Cập nhật môi trường:
 
 ```powershell
 conda env update -n image-search -f .\environment.yml --prune -v
+conda run -n image-search pre-commit install   # Luôn chạy lại sau khi update env
 ```
 
 Luôn dùng lệnh trên thay vì:
